@@ -124,6 +124,7 @@ def transcrever_tudo():
 
 if __name__ == "__main__":
     os.system('cls' if os.name == 'nt' else 'clear')
+    verificar_ffmpeg()
     transcrever_tudo()
     input("Pressione Enter para sair...")
 
