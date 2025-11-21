@@ -3,6 +3,7 @@ import torch
 import os
 import time
 import sys
+import shutil
 
 # Extensões que o script vai procurar
 EXTENSOES_ACEITAS = ('.mp4', '.mp3', '.wav', '.m4a', '.mkv')
@@ -15,6 +16,15 @@ def verificar_gpu():
     else:
         print("⚠️ GPU não detectada. Usando CPU.")
         return "cpu"
+
+def verificar_ffmpeg():
+    # Verifica se o ffmpeg.exe está na pasta atual ou no PATH do Windows
+    if shutil.which("ffmpeg") is None and not os.path.exists("ffmpeg.exe"):
+        print("\n❌ ERRO CRÍTICO: O FFmpeg não foi encontrado!")
+        print("Certifique-se de que o arquivo 'ffmpeg.exe' está nesta mesma pasta.")
+        print("Baixe em: https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip")
+        input("\nPressione Enter para sair...")
+        sys.exit()
 
 def perguntar_configuracao():
     print("\n--- CONFIGURAÇÃO DE TRANSCRIÇÃO ---")
@@ -55,7 +65,7 @@ def transcrever_tudo():
     # --- MUDANÇA IMPORTANTE ---
     # Para múltiplos idiomas, o 'small' erra muito.
     # O 'medium' é o ideal. Se ficar lento demais, volte para 'small'.
-    modelo_tipo = "medium" 
+    modelo_tipo = "medium"
     
     print(f"\n🧠 Carregando modelo '{modelo_tipo}'... (Isso exige mais VRAM)")
     try:
