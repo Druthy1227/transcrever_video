@@ -53,30 +53,28 @@ py -3.11 -m venv venv
 ### 4. Instalar as Bibliotecas de IA
 Você tem duas opções para instalar as bibliotecas. Escolha a que preferir:
 
-#### Opção A: Instalação Rápida (Recomendada) ⚡
+### 4.1 Opção A: Instalação Rápida (Recomendada) ⚡
+
 Se você tiver o arquivo `requirements.txt` na pasta, basta rodar este comando único no terminal da pasta para instalar tudo (incluindo suporte a NVIDIA):
 
-### Opção B: Instalação Manual
+### 4.2 Opção B: Instalação Manual
 Se preferir digitar comando por comando:
 
-# 1. Ativar o ambiente
+### 4.2.1. Ativar o ambiente
 
 ```bash
 venv\Scripts\activate
 ```
 
-# 2. Instalar PyTorch com suporte a GPU NVIDIA (CUDA 12.1)
+### 4.2.2 Instalar PyTorch com suporte a GPU NVIDIA (CUDA 12.1)
 
 ```bash
 pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu121](https://download.pytorch.org/whl/cu121)
 ```
 
-# 3. Instalar o Whisper e ferramentas de vídeo
+### 4.2.3 Instalar o Whisper e ferramentas de vídeo
 ```bash
 pip install openai-whisper yt-dlp
-```
-```bash
-venv\Scripts\pip install -r requirements.txt
 ```
 ### 5\. Criar Atalho de Execução (Já presente no repositório)
 
