@@ -54,20 +54,31 @@ py -3.11 -m venv venv
 Você tem duas opções para instalar as bibliotecas. Escolha a que preferir:
 
 #### Opção A: Instalação Rápida (Recomendada) ⚡
-Se você tiver o arquivo `requirements.txt` na pasta, basta rodar este comando único para instalar tudo (incluindo suporte a NVIDIA):
+Se você tiver o arquivo `requirements.txt` na pasta, basta rodar este comando único no terminal da pasta para instalar tudo (incluindo suporte a NVIDIA):
+
+### Opção B: Instalação Manual
+Se preferir digitar comando por comando:
 
 # 1. Ativar o ambiente
-venv\Scripts\activate
-
-# 2. Instalar PyTorch com suporte a GPU NVIDIA (CUDA 12.1)
-pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu121](https://download.pytorch.org/whl/cu121)
-
-# 3. Instalar o Whisper e ferramentas de vídeo
-pip install openai-whisper yt-dlp
 
 ```bash
+venv\Scripts\activate
+```
+
+# 2. Instalar PyTorch com suporte a GPU NVIDIA (CUDA 12.1)
+
+```bash
+pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu121](https://download.pytorch.org/whl/cu121)
+```
+
+# 3. Instalar o Whisper e ferramentas de vídeo
+```bash
+pip install openai-whisper yt-dlp
+```
+```bash
 venv\Scripts\pip install -r requirements.txt
-### 5\. Criar Atalho de Execução
+```
+### 5\. Criar Atalho de Execução (Já presente no repositório)
 
 Para não precisar digitar comandos no futuro, crie um arquivo chamado **`INICIAR.bat`** na pasta do projeto com o seguinte conteúdo:
 
@@ -86,6 +97,7 @@ pause
 1.  **Prepare:** Coloque seus vídeos (`.mp4`, `.mkv`, `.mov`) ou áudios (`.mp3`) na mesma pasta do script.
 2.  **Execute:** Dê dois cliques no arquivo **`INICIAR.bat`**.
 3.  **Escolha o Modo:** Digite o número da opção desejada no menu:
+⚠️ Por padrão o ajuste avançado é o **medium**, leia mais sobre após a tabela sobre os modos e opções.
 
 | Opção | Modo | Quando usar? |
 | :--- | :--- | :--- |
@@ -117,7 +129,7 @@ O script vem configurado para rodar rápido na maioria das GPUs. Se quiser alter
 
 **Erro: `ModuleNotFoundError: No module named 'torch'`**
 
-> Você não está usando o ambiente virtual. Use o arquivo `INICIAR.bat` para rodar.
+> Você não está usando o ambiente virtual. Use o arquivo `INICIAR.bat` para rodar ou cerficar-se que o terminal está rodando no ambiente virtual (normalmente terá um (venv) antes do caminho listado no terminal, isso garante que estará no ambiente virtual com python 3.11)
 
 **Erro: `CUDA out of memory`**
 
