@@ -1,0 +1,33 @@
+# --- 1. Ignorar o Ambiente Virtual (CRUCIAL) ---
+# Essa pasta tem milhares de arquivos e não deve ir pro GitHub
+venv/
+env/
+.env
+
+# --- 2. Ignorar Arquivos de Mídia (Pesados) ---
+# O GitHub trava se você tentar enviar vídeos
+*.mp4
+*.mp3
+*.wav
+*.mkv
+*.mov
+*.flac
+*.m4a
+
+# --- 3. Ignorar Executáveis e Ferramentas Externas ---
+# Quem baixar seu código deve baixar o FFmpeg por conta própria
+ffmpeg.exe
+ffprobe.exe
+*.exe
+*.bat
+
+# --- 4. Ignorar Resultados Gerados ---
+# Se não quiser salvar as transcrições no histórico
+*.txt
+*.srt
+
+# --- 5. Lixo do Python e IDE ---
+__pycache__/
+*.pyc
+.vscode/
+.idea/
