@@ -50,12 +50,12 @@ Abra o terminal na pasta do projeto e rode o comando abaixo para criar um ambien
 ```bash
 py -3.11 -m venv venv
 ```
+### 4. Instalar as Bibliotecas de IA
+Você tem duas opções para instalar as bibliotecas. Escolha a que preferir:
 
-### 4\. Instalar as Bibliotecas de IA
+#### Opção A: Instalação Rápida (Recomendada) ⚡
+Se você tiver o arquivo `requirements.txt` na pasta, basta rodar este comando único para instalar tudo (incluindo suporte a NVIDIA):
 
-Agora, ative o ambiente e instale o suporte a NVIDIA e o Whisper. Copie e cole os comandos:
-
-```bash
 # 1. Ativar o ambiente
 venv\Scripts\activate
 
@@ -64,8 +64,9 @@ pip install torch torchvision torchaudio --index-url [https://download.pytorch.o
 
 # 3. Instalar o Whisper e ferramentas de vídeo
 pip install openai-whisper yt-dlp
-```
 
+```bash
+venv\Scripts\pip install -r requirements.txt
 ### 5\. Criar Atalho de Execução
 
 Para não precisar digitar comandos no futuro, crie um arquivo chamado **`INICIAR.bat`** na pasta do projeto com o seguinte conteúdo:
